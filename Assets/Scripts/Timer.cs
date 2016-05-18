@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Timer : MonoBehaviour {
 
-	float timeLeft = 80f;
+	float timeLeft = 85f;
 
 	public delegate void TimerStop();
 	public static event TimerStop OnTimerStop;
