@@ -44,8 +44,8 @@ public class Waypoints : MonoBehaviour {
 
     void LateUpdate()
     {
-        Quaternion rotation = Quaternion.LookRotation(CurrentWaypoint.position - MyTransform.position);
-        MyTransform.rotation = Quaternion.Slerp(MyTransform.rotation, rotation, Time.deltaTime * Damping);
+        //Quaternion rotation = Quaternion.LookRotation(CurrentWaypoint.position - MyTransform.position);
+        //MyTransform.rotation = Quaternion.Slerp(MyTransform.rotation, rotation, Time.deltaTime * Damping);
     }
 
     void MoveTowards()
