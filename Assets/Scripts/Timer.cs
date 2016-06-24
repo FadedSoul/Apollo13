@@ -7,10 +7,12 @@ public class Timer : MonoBehaviour {
 
 	public delegate void TimerStop();
 	public static event TimerStop OnTimerStop;
-
+    void Start()
+    {
+        StartCoroutine(timer());
+    }
 	void Update()
 	{
-		timeLeft -= Time.deltaTime;
 		if(timeLeft < 0)
 		{
 			if(OnTimerStop != null)
@@ -22,4 +24,10 @@ public class Timer : MonoBehaviour {
 
 		print(timeLeft);
 	}
+    IEnumerator timer()
+    {
+        yield return new WaitForSeconds(1);
+        timeLeft--;
+        StartCoroutine(timer());
+    }
 }
